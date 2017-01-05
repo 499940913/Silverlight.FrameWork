@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F2152D9-AB01-48B5-9D86-C53574BFFE14}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BaseTool</RootNamespace>
+    <AssemblyName>BaseTool</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>cb5a1f8b</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DanielVaughan.Silverlight, Version=1.3.0.0, Culture=neutral, PublicKeyToken=f32f1bf552288cd5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\DanielVaughan.Silverlight.dll</HintPath>
+    </Reference>
+    <Reference Include="FJ.Core">
+      <HintPath>Lib\FJ.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FloatableWindow">
+      <HintPath>..\DilapidatedHouseSystem\Lib\FloatableWindow.dll</HintPath>
+    </Reference>
+    <Reference Include="Liquid">
+      <HintPath>..\DilapidatedHouseSystem\Lib\Liquid.dll</HintPath>
+    </Reference>
+    <Reference Include="Liquid.Components">
+      <HintPath>..\DilapidatedHouseSystem\Lib\Liquid.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="Liquid.Popup">
+      <HintPath>..\DilapidatedHouseSystem\Lib\Liquid.Popup.dll</HintPath>
+    </Reference>
+    <Reference Include="Liquid.TreeView">
+      <HintPath>..\DilapidatedHouseSystem\Lib\Liquid.TreeView.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json.Silverlight">
+      <HintPath>..\DilapidatedHouseSystem\Lib\Newtonsoft.Json.Silverlight.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Json, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Json, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Runtime.Serialization.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Serialization, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Xml.Serialization.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppSettingHelper.cs" />
+    <Compile Include="BaseFloatableWindow.xaml.cs">
+      <DependentUpon>BaseFloatableWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Calendar\Calendar.cs" />
+    <Compile Include="Controls\Calendar\CalendarAutomationPeer.cs" />
+    <Compile Include="Controls\Calendar\CalendarBlackoutDatesCollection.cs" />
+    <Compile Include="Controls\Calendar\CalendarButton.cs" />
+    <Compile Include="Controls\Calendar\CalendarButtonAutomationPeer.cs" />
+    <Compile Include="Controls\Calendar\CalendarDateChangedEventArgs.cs" />
+    <Compile Include="Controls\Calendar\CalendarDateRange.cs" />
+    <Compile Include="Controls\Calendar\CalendarDayButton.cs" />
+    <Compile Include="Controls\Calendar\CalendarDayButtonAutomationPeer.cs" />
+    <Compile Include="Controls\Calendar\CalendarExtensions.cs" />
+    <Compile Include="Controls\Calendar\CalendarItem.cs" />
+    <Compile Include="Controls\Calendar\CalendarMode.cs" />
+    <Compile Include="Controls\Calendar\CalendarModeChangedEventArgs.cs" />
+    <Compile Include="Controls\Calendar\CalendarSelectionMode.cs" />
+    <Compile Include="Controls\Calendar\DateTimeHelper.cs" />
+    <Compile Include="Controls\Calendar\DateTimeTypeConverter.cs" />
+    <Compile Include="Controls\Calendar\SelectedDatesCollection.cs" />
+    <Compile Include="Camera.xaml.cs">
+      <DependentUpon>Camera.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls.Layout.Toolkit\Accordion\Accordion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls.Layout.Toolkit\Accordion\AccordionAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls.Layout.Toolkit\Accordion\AccordionAutomationPeer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls.Layout.Toolkit\Accordion\AccordionButton.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls.Layout.Toolkit\Accordion\AccordionItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls.Layout.Toolkit\Accordion\AccordionItemAutomationPeer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls.Layout.Toolkit\Accordion\AccordionSelectionMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls.Layout.Toolkit\Accordion\ExpandableContentControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls.Layout.Toolkit\Accordion\SelectionSequence.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls.Layout.Toolkit\LayoutTransformer\LayoutTransformer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls.Layout.Toolkit\TransitioningContentControl\TransitioningContentControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\ComboboxTreeView.cs" />
+    <Compile Include="DataManger.xaml.cs">
+      <DependentUpon>DataManger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DatePicker\DatePicker.cs" />
+    <Compile Include="Controls\DatePicker\DatePicker.TestHook.cs" />
+    <Compile Include="Controls\DatePicker\DatePickerAutomationPeer.cs" />
+    <Compile Include="Controls\DatePicker\DatePickerDateValidationErrorEventArgs.cs" />
+    <Compile Include="Controls\DatePicker\DatePickerFormat.cs" />
+    <Compile Include="Controls\DatePicker\DatePickerTextBox.cs" />
+    <Compile Include="DymicObjectHelper.cs" />
+    <Compile Include="Dynamic.cs" />
+    <Compile Include="ExportHelper.cs" />
+    <Compile Include="Group2Group.xaml.cs">
+      <DependentUpon>Group2Group.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QueryButton.cs" />
+    <Compile Include="WeakEvent.cs" />
+    <Compile Include="Web\HttpHelper.cs" />
+    <Compile Include="ImageButton.cs" />
+    <Compile Include="ImageButton2.cs" />
+    <Compile Include="ImageButton3.cs" />
+    <Compile Include="InteractionHelper.cs" />
+    <Compile Include="JSONHelper.cs" />
+    <Compile Include="MacButton.cs" />
+    <Compile Include="MenuItem.cs" />
+    <Compile Include="MessageCenter.xaml.cs">
+      <DependentUpon>MessageCenter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyProgressBar.xaml.cs">
+      <DependentUpon>MyProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NonDesignWindow.xaml.cs">
+      <DependentUpon>NonDesignWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoViewerWindow.xaml.cs">
+      <DependentUpon>PhotoViewerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SilderCheckBox.cs" />
+    <Compile Include="TabItem.cs" />
+    <Compile Include="CommandViewModel.cs" />
+    <Compile Include="ThicknessWrapper.cs" />
+    <Compile Include="BaseChildWindow.xaml.cs">
+      <DependentUpon>BaseChildWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Upload.xaml.cs">
+      <DependentUpon>Upload.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XMLHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\Calendar\Calendar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Controls\Calendar\CalendarButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Controls\Calendar\CalendarDayButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Controls\Calendar\CalendarItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="BaseFloatableWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Camera.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataManger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls.Layout.Toolkit\Accordion\Accordion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls.Layout.Toolkit\Accordion\AccordionButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls.Layout.Toolkit\Accordion\AccordionItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls.Layout.Toolkit\Accordion\ExpandableContentControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls.Layout.Toolkit\LayoutTransformer\LayoutTransformer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls.Layout.Toolkit\TransitioningContentControl\TransitioningContentControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Resource Include="Controls\DatePicker\DatePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Controls\DatePicker\DatePickerTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="Group2Group.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MessageCenter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyProgressBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseChildWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NonDesignWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PhotoViewerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Upload.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\exit.png" />
+    <Resource Include="Resources\Tulips.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Add.png" />
+    <Resource Include="images\ascx.png" />
+    <Resource Include="images\asmx.png" />
+    <Resource Include="images\aspx.png" />
+    <Resource Include="images\avi.png" />
+    <Resource Include="images\baselib.png" />
+    <Resource Include="images\Bold.png" />
+    <Resource Include="images\Bookmark_add.png" />
+    <Resource Include="images\btn_expand.png" />
+    <Resource Include="images\btn_unexpand.png" />
+    <Resource Include="images\Cancel.png" />
+    <Resource Include="images\CenterAlignment.png" />
+    <Resource Include="images\Chart.png" />
+    <Resource Include="images\CloseX.png" />
+    <Resource Include="images\config.png" />
+    <Resource Include="images\cs.png" />
+    <Resource Include="images\css.png" />
+    <Resource Include="images\DeleteAllGraphics.png" />
+    <Resource Include="images\DeleteGraphics.png" />
+    <Resource Include="images\doc.png" />
+    <Resource Include="images\document.png" />
+    <Resource Include="images\Feedback.png" />
+    <Resource Include="images\folder.png" />
+    <Resource Include="images\folderOpen.png" />
+    <Resource Include="images\Fullscreen.png" />
+    <Resource Include="images\gif.png" />
+    <Resource Include="images\Help-icon.png" />
+    <Resource Include="images\home.png" />
+    <Resource Include="images\htm.png" />
+    <Resource Include="images\html.png" />
+    <Resource Include="images\Image.png" />
+    <Resource Include="images\Italic.png" />
+    <Resource Include="images\jpg.png" />
+    <Resource Include="images\js.png" />
+    <Resource Include="images\large\ascx.png" />
+    <Resource Include="images\large\asmx.png" />
+    <Resource Include="images\large\aspx.png" />
+    <Resource Include="images\large\avi.png" />
+    <Resource Include="images\large\config.png" />
+    <Resource Include="images\large\cs.png" />
+    <Resource Include="images\large\css.png" />
+    <Resource Include="images\large\doc.png" />
+    <Resource Include="images\large\exe.png" />
+    <Resource Include="images\large\folder.png" />
+    <Resource Include="images\large\gif.png" />
+    <Resource Include="images\large\htm.png" />
+    <Resource Include="images\large\html.png" />
+    <Resource Include="images\large\jpg.png" />
+    <Resource Include="images\large\js.png" />
+    <Resource Include="images\large\mp3.png" />
+    <Resource Include="images\large\mp4.png" />
+    <Resource Include="images\large\pdf.png" />
+    <Resource Include="images\large\png.png" />
+    <Resource Include="images\large\txt.png" />
+    <Resource Include="images\large\unknown.png" />
+    <Resource Include="images\large\xaml.png" />
+    <Resource Include="images\large\xls.png" />
+    <Resource Include="images\large\xml.png" />
+    <Resource Include="images\large\zip.png" />
+    <Resource Include="images\Layers.png" />
+    <Resource Include="images\LeftAlignment.png" />
+    <Resource Include="images\MeasureArea.png" />
+    <Resource Include="images\MeasureDistance.png" />
+    <Resource Include="images\mp3.png" />
+    <Resource Include="images\mp4.png" />
+    <Resource Include="images\Open.png" />
+    <Resource Include="images\pdf.png" />
+    <Resource Include="images\PieChart.png" />
+    <Resource Include="images\png.png" />
+    <Resource Include="images\Print.png" />
+    <Resource Include="images\Rss.png" />
+    <Resource Include="images\Save.png" />
+    <Resource Include="images\Search.png" />
+    <Resource Include="images\Tick.png" />
+    <Resource Include="images\Tools.png" />
+    <Resource Include="images\txt.png" />
+    <Resource Include="images\Underline.png" />
+    <Resource Include="images\unknown.png" />
+    <Resource Include="images\Uparrow.png" />
+    <Resource Include="images\Video.png" />
+    <Resource Include="images\view.png" />
+    <Resource Include="images\Weather.png" />
+    <Resource Include="images\xaml.png" />
+    <Resource Include="images\xls.png" />
+    <Resource Include="images\xml.png" />
+    <Resource Include="images\zip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\down.png" />
+    <Resource Include="images\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\CloseButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

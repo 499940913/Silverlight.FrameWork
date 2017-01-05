@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Silverlight.FrameWork.BaseFrameWorkControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style x:Key="UserControlStyle"  TargetType="UserControl">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="UserControl">
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <ContentPresenter x:Name="ContentPresenter" Content="{TemplateBinding Content}"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <UserControl.Style >
+        <StaticResource ResourceKey="UserControlStyle"/>
+    </UserControl.Style>
+</UserControl>

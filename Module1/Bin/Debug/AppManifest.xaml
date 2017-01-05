@@ -1,0 +1,30 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="Module1" EntryPointType="Module1.App" RuntimeVersion="5.0.61118.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="Module1" Source="Module1.dll" />
+    <AssemblyPart x:Name="BaseTool" Source="BaseTool.dll" />
+    <AssemblyPart x:Name="Silverlight.FrameWork" Source="Silverlight.FrameWork.dll" />
+    <AssemblyPart x:Name="FloatableWindow" Source="FloatableWindow.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Toolkit" Source="System.Windows.Controls.Toolkit.dll" />
+    <AssemblyPart x:Name="Liquid.TreeView" Source="Liquid.TreeView.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls" Source="System.Windows.Controls.dll" />
+    <AssemblyPart x:Name="Liquid" Source="Liquid.dll" />
+    <AssemblyPart x:Name="FJ.Core" Source="FJ.Core.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Data" Source="System.Windows.Controls.Data.dll" />
+    <AssemblyPart x:Name="Newtonsoft.Json.Silverlight" Source="Newtonsoft.Json.Silverlight.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Input.Toolkit" Source="System.Windows.Controls.Input.Toolkit.dll" />
+    <AssemblyPart x:Name="System.Windows.Data" Source="System.Windows.Data.dll" />
+    <AssemblyPart x:Name="System.Xml.Linq" Source="System.Xml.Linq.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Toolkit.Internals" Source="System.Windows.Controls.Toolkit.Internals.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Data.Input" Source="System.Windows.Controls.Data.Input.dll" />
+    <AssemblyPart x:Name="System.ComponentModel.DataAnnotations" Source="System.ComponentModel.DataAnnotations.dll" />
+    <AssemblyPart Source="zh-Hans/System.Windows.Controls.resources.dll" />
+    <AssemblyPart Source="zh-Hans/System.Windows.Controls.Data.resources.dll" />
+    <AssemblyPart Source="zh-Hans/System.Windows.Data.resources.dll" />
+    <AssemblyPart Source="zh-Hans/System.Xml.Linq.resources.dll" />
+    <AssemblyPart Source="zh-Hans/System.Windows.Controls.Data.Input.resources.dll" />
+    <AssemblyPart Source="zh-Hans/System.ComponentModel.DataAnnotations.resources.dll" />
+  </Deployment.Parts>
+  <Deployment.ExternalParts>
+    <ExtensionPart Source="System.Windows.Controls.Navigation.zip" />
+  </Deployment.ExternalParts>
+</Deployment>

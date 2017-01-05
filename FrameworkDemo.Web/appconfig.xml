@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<appconfig>
+  <!--应用的一些基本设置在这加-->
+  <add key="AssemblyRoot" value="http://localhost:7171/ClientBin/"/>
+</appconfig>

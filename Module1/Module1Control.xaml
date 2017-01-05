@@ -1,0 +1,13 @@
+﻿<framework:FrameWorkControl x:Class="Module1.Module1Control"
+             xmlns:framework="clr-namespace:Silverlight.FrameWork;assembly=Silverlight.FrameWork"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <Grid x:Name="LayoutRoot" Background="White">
+        <TextBlock Text=" 这是模块1中的用户控件,我放个公主照片上去" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill" Source="miku.jpg"/>
+    </Grid>
+</framework:FrameWorkControl>

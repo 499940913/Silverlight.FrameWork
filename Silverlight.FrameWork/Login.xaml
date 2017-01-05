@@ -1,0 +1,1217 @@
+﻿<navigation:Page x:Class="Silverlight.FrameWork.Login" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+    d:DesignHeight="768" d:DesignWidth="1366" 
+                     xmlns:base="clr-namespace:BaseTool;assembly=BaseTool"
+                  xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+                                 Title="登录">
+    <navigation:Page.Resources>
+        <ControlTemplate x:Key="MyButton">
+            <Grid>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualStateGroup.Transitions>
+                            <vsm:VisualTransition To="Pressed" 
+                                            GeneratedDuration="0:0:0.01" />
+                            <vsm:VisualTransition To="MouseOver" 
+                                            GeneratedDuration="0:0:0.5" />
+                            <vsm:VisualTransition From="Pressed" To="MouseOver" 
+                                            GeneratedDuration="0:0:0.01" />
+                            <VisualTransition From="MouseOver" To="Normal" 
+                                              GeneratedDuration="0:0:0.2"/>
+                        </VisualStateGroup.Transitions>
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="BorderTK" 
+                                                 Storyboard.TargetProperty="Value" To="1" />
+                                <DoubleAnimation Storyboard.TargetName="Border" 
+                                                 Storyboard.TargetProperty="(Border.Effect).(DropShadowEffect.Opacity)" To="0.3" />
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="BorderTK" 
+                                                 Storyboard.TargetProperty="Value" To="1" />
+                                <DoubleAnimation Storyboard.TargetName="Border" 
+                                                 Storyboard.TargetProperty="(Border.Effect).(DropShadowEffect.Opacity)" To="0.3" />
+                            </Storyboard>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <base:ThicknessWrapper x:Name="BorderTK" Target="{Binding ElementName=Border}"  Side="All" PropertyName="BorderThickness" />
+                <Border x:Name="Border" BorderThickness="0" CornerRadius="3" Background="#FF1C80D1">
+                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <Border.BorderBrush>
+                        <LinearGradientBrush x:Name="BorderBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Offset="0" Color="#FFe4ffff"/>
+                            <GradientStop Offset="1.0" Color="#FF4d7b8a"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                    <Border.Effect>
+                        <DropShadowEffect Opacity="0" Color="#FF4d7b8a" />
+                    </Border.Effect>
+                </Border>
+            </Grid>
+        </ControlTemplate>
+        <Style x:Key="GlassBorderStyle" TargetType="Border">
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.75,1" StartPoint="0.25,0">
+                        <GradientStop Color="#33FFFFFF" Offset="0"/>
+                        <GradientStop Color="#C0FFFFFF" Offset="0.287"/>
+                        <GradientStop Color="#4011322D" Offset="0.683"/>
+                        <GradientStop Color="#33FFFFFF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderBrush">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#5811322D" Offset="0"/>
+                        <GradientStop Color="#3EFFFFFF" Offset="0.25"/>
+                        <GradientStop Color="#FFFFFFFF" Offset="0.5"/>
+                        <GradientStop Color="#3EFFFFFF" Offset="0.75"/>
+                        <GradientStop Color="#BFFFFFFF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="3" ShadowDepth="3" Opacity="0.5"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="GlassBorderStyle2" TargetType="Border">
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    #33ffffff
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderBrush">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#5811322D" Offset="0"/>
+                        <GradientStop Color="#3EFFFFFF" Offset="0.25"/>
+                        <GradientStop Color="#FFFFFFFF" Offset="0.5"/>
+                        <GradientStop Color="#3EFFFFFF" Offset="0.75"/>
+                        <GradientStop Color="#BFFFFFFF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="3" ShadowDepth="3" Opacity="0.5"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </navigation:Page.Resources>
+    <Grid x:Name="LayoutRoot" HorizontalAlignment="Stretch" Height="Auto" Width="Auto" VerticalAlignment="Stretch" Margin="0,0,0,0"  Background="#5baece" >
+        <Image x:Name="BackGround"/>
+        <Rectangle Height="500" HorizontalAlignment="Stretch"  VerticalAlignment="Top" Margin="0,35,0,0">
+            <Rectangle.Fill>
+                <RadialGradientBrush GradientOrigin="0.5,0" 
+        RadiusX="0.5" RadiusY="0.5">
+                    <GradientStop Color="#005baece" Offset="1" />
+                    <GradientStop Color="#33FCFEFF" Offset="0" />
+                </RadialGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Grid  Height="80" Width="700" VerticalAlignment="Top" Margin="0,330,0,0">
+            <Border  Style="{StaticResource GlassBorderStyle}" Opacity="0.3"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+            <TextBlock Name="Title"/>
+        </Grid>
+        <Grid  Height="40" Width="800" VerticalAlignment="Top" Margin="0,411,0,0">
+            <Path   Data="M50,0 L0,40 400,40 400 00  z">
+                <Path.Fill>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="#94d3ef" Offset="0.0" />
+                        <GradientStop Color="#A594d3ef" Offset="0.4" />
+                        <GradientStop Color="#3394d3ef" Offset="0.7" />
+                        <GradientStop Color="#0094d3ef" Offset="1" />
+                    </LinearGradientBrush>
+                </Path.Fill>
+            </Path>
+            <Path   Data="M50,0 L0,40 400,40 400 00  z">
+                <Path.Fill>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="#94d3ef" Offset="0.0" />
+                        <GradientStop Color="#A594d3ef" Offset="0.4" />
+                        <GradientStop Color="#3394d3ef" Offset="0.7" />
+                        <GradientStop Color="#0094d3ef" Offset="1" />
+                    </LinearGradientBrush>
+                </Path.Fill>
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <TranslateTransform Y="0"/>
+                        <TranslateTransform X="-800"/>
+                        <RotateTransform Angle="180"/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Grid>
+        <Grid Height="60" Width="800" VerticalAlignment="Top" Margin="0,451,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border  Style="{StaticResource GlassBorderStyle2}" Opacity="1"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.RowSpan="3" Grid.ColumnSpan="10"/>
+            <Image Name="UserLogo" />
+            <Image Name="PwdLogo"/>
+            <TextBox  Grid.Column="2" Grid.Row="1" Name="User"   Background="#59FFFFFF"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="20"/>
+            <PasswordBox      Grid.Column="5" Grid.Row="1"  Name="Password"  PasswordChar="*" Background="#59FFFFFF"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  FontSize="20"/>
+            <Button  x:Name="LoginButton" Width="0" Height="0" Template="{StaticResource MyButton}" Background="{x:Null}" BorderThickness="0"/>
+        </Grid>
+        <StackPanel Margin="0,20" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="Auto" Height="Auto" Orientation="Horizontal">
+            <TextBlock Height="22" HorizontalAlignment="Center"  Width="Auto"  Foreground="#c1cfd0" FontSize="11" >
+              <Bold>Copyright©</Bold>
+            </TextBlock>
+            <TextBlock Height="22"  x:Name="Copyright" HorizontalAlignment="Center"  Width="Auto" Margin="0,20" VerticalAlignment="Bottom" Foreground="#c1cfd0" FontSize="11" Text="权利人"/>
+        </StackPanel>
+        
+    </Grid>
+</navigation:Page>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

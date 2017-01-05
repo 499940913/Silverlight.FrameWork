@@ -1,0 +1,17 @@
+﻿<basetool:BaseChildWindow  x:Class="BaseTool.Upload"
+                          xmlns:basetool="clr-namespace:BaseTool;assembly=BaseTool"  
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  Title="文件上传" Closing="BaseChildWindow_Closing">
+    <Grid x:Name="LayoutRoot"  Background="AliceBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="PragressContainer"/>
+        <StackPanel  Orientation="Horizontal" Grid.Row="1">
+            <basetool:MacButton Content="选择上传文件"    x:Name="btnSelect" Width="80" Height="25" Click="btnSelect_Click"  Margin="5,0,5,0" />
+            <basetool:MacButton Content="清除" x:Name="btnReset" Width="40" Height="25" Click="btnReset_Click"   Margin="5,0,5,0" />
+            <basetool:MacButton Content="上传" x:Name="btnUpload" Width="40" Height="25" Click="btnUpload_Click"   Margin="5,0,5,0"/>
+        </StackPanel>
+    </Grid>
+    </basetool:BaseChildWindow>

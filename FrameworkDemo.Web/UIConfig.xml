@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UIConfig FrameWorkBrush="#d8dcdf" Title="这是主界面" HeaderHeight="90">
+  <!--主界面的设计在这，TitleControls Container Accordion这三个节点必须存在，分别代表标题栏容器，主界面容器与手风琴菜单容器-->
+  <TextViewModel Name="Title"  Text="系统标题"   VerticalAlignment="Center" HorizontalAlignment="Left" Row="0" 
+                     Margin="70,0" Foreground="#a5a5a5" FontSize="45"   ColumnSpan="3"
+                    Column="0" ClassName="System.Windows.Controls.TextBlock" AssemblyName="System.Windows.dll" FontSource="http://localhost:7171/font/方正粗圆简体.ttf" FontFamily="FZCuYuan-M03S"/>
+  <ImageViewModel Name="Banner"   Source="http://localhost:7171/image/banner.jpg"   HorizontalAlignment="Left"  ClassName="System.Windows.Controls.Image" AssemblyName="System.Windows.dll" UiIndex="1"/>
+  <TitleControls>
+  </TitleControls>
+  <Container>
+    <!--把模块1中的Module1Control加上-->
+    <FrameWorkViewModel ClassName="Module1.Module1Control" AssemblyName="Module1.dll" PackageName="Module1.xap" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" UiIndex="0"/>
+  </Container>
+  <Accordion>
+    <AccordionItemViewModel Name="AccordionItem" Header="菜单" FontSize="14">
+      <AccordionCommandViewModel Text="菜单-1" Source="http://localhost:7171/image/miku.jpg" ImageSize="40" Tip="让MIKU消失">
+       <AccordionCommandViewModel Text="菜单-1-1" Source="http://localhost:7171/image/miku.jpg" ImageSize="30" Tip="让MIKU消失">
+        <!--与模块1中的Module1Command进行绑定-->
+        <Command ClassName="Module1.Module1Command" AssemblyName="Module1.dll" PackageName="Module1.xap"/>
+      </AccordionCommandViewModel>
+    </AccordionCommandViewModel>
+    </AccordionItemViewModel>
+    <AccordionItemViewModel Name="AccordionItem" Header="菜单2" FontSize="14">
+      <AccordionCommandViewModel Text="菜单1" Source="http://localhost:7171/image/miku.jpg" ImageSize="40" Tip="让MIKU消失">
+        <!--与模块1中的Module1Command进行绑定-->
+        <Command ClassName="Module1.Module1Command" AssemblyName="Module1.dll" PackageName="Module1.xap"/>
+      </AccordionCommandViewModel>
+    </AccordionItemViewModel>
+  </Accordion>
+</UIConfig>

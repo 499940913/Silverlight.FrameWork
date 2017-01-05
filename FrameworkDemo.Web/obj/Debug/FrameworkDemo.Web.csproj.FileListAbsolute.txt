@@ -1,0 +1,16 @@
+F:\开发\危房模块化改造\FrameworkDemo\FrameworkDemo.Web\bin\FrameworkDemo.Web.dll.config
+F:\开发\危房模块化改造\FrameworkDemo\FrameworkDemo.Web\bin\FrameworkDemo.Web.dll
+F:\开发\危房模块化改造\FrameworkDemo\FrameworkDemo.Web\bin\FrameworkDemo.Web.pdb
+F:\开发\危房模块化改造\FrameworkDemo\FrameworkDemo.Web\obj\Debug\FrameworkDemo.Web.dll
+F:\开发\危房模块化改造\FrameworkDemo\FrameworkDemo.Web\obj\Debug\FrameworkDemo.Web.pdb
+C:\Users\Administrator\Desktop\FrameworkDemo\FrameworkDemo.Web\bin\FrameworkDemo.Web.dll.config
+C:\Users\Administrator\Desktop\FrameworkDemo\FrameworkDemo.Web\bin\FrameworkDemo.Web.dll
+C:\Users\Administrator\Desktop\FrameworkDemo\FrameworkDemo.Web\bin\FrameworkDemo.Web.pdb
+C:\Users\Administrator\Desktop\FrameworkDemo\FrameworkDemo.Web\obj\Debug\FrameworkDemo.Web.dll
+C:\Users\Administrator\Desktop\FrameworkDemo\FrameworkDemo.Web\obj\Debug\FrameworkDemo.Web.pdb
+F:\开发\FrameworkDemo\FrameworkDemo.Web\bin\FrameworkDemo.Web.dll.config
+F:\开发\FrameworkDemo\FrameworkDemo.Web\bin\FrameworkDemo.Web.dll
+F:\开发\FrameworkDemo\FrameworkDemo.Web\bin\FrameworkDemo.Web.pdb
+F:\开发\FrameworkDemo\FrameworkDemo.Web\obj\Debug\FrameworkDemo.Web.csprojResolveAssemblyReference.cache
+F:\开发\FrameworkDemo\FrameworkDemo.Web\obj\Debug\FrameworkDemo.Web.dll
+F:\开发\FrameworkDemo\FrameworkDemo.Web\obj\Debug\FrameworkDemo.Web.pdb

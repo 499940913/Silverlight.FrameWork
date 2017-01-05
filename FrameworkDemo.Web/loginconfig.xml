@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<LoginConfig>
+  <!--这个配置必须存在，登录窗口的界面设置-->
+ <ImageViewModel Name="BackGround" RowSpan="5" SolumnSpan="5"  With="1920"  Height="1080"  Source="http://ent.southcn.com/8/attachment/20161201/15502/8dfc4e95e9a8415aa4b9.jpg"/>
+  <ImageViewModel Row="1"  Name="UserLogo" Source="http://localhost:7171/image/userlogin.png" Width="40" Height="40" Column="1" />
+  <ImageViewModel Row="1"  Name="PwdLogo"  Source="http://localhost:7171/image/password.png" Width="40" Height="40" Column="4" />
+  <TextViewModel Name="Title" Height="70" HorizontalAlignment="Center" Text="三叶我老婆，谢谢"   Foreground="White" FontSize="50" VerticalAlignment="Center" Width="Auto" FontSource="http://localhost:7171/font/方正粗圆简体.ttf" FontFamily="FZCuYuan-M03S"/>
+    <TextViewModel Name="Copyright"   Text="彭威"/>
+  <CommandViewModel  Column="7" Row="1" FontSize="19" Height="35" Width="80"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Name="LoginButton" Foreground="White" Content="确 认">
+  <Command ClassName="Module1.LoginCommand" AssemblyName="Module1.dll" PackageName="Module1.xap"/> 
+     <!--这里是要现实登录界面的按钮逻辑部分-->  
+</CommandViewModel>
+</LoginConfig>

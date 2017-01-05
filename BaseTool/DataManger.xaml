@@ -1,0 +1,109 @@
+﻿<basetool:BaseChildWindow  x:Class="BaseTool.DataManger"
+                        xmlns:basetool="clr-namespace:BaseTool;assembly=BaseTool"  
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+                                            xmlns:liquid="clr-namespace:Liquid;assembly=Liquid" 
+                      xmlns:liquidTreeView="clr-namespace:Liquid;assembly=Liquid.TreeView"
+                            xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+                      
+           Title="文件管理" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="380" d:DesignWidth="600" Loaded="BaseChildWindow_Loaded">
+    <controls:ChildWindow.Resources>
+        <ControlTemplate x:Key="MyButton">
+            <Grid>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualStateGroup.Transitions>
+                            <vsm:VisualTransition To="Pressed" GeneratedDuration="0:0:0.01" />
+                            <vsm:VisualTransition To="MouseOver" GeneratedDuration="0:0:0.5" />
+                            <vsm:VisualTransition From="Pressed" To="MouseOver" GeneratedDuration="0:0:0.01" />
+                            <VisualTransition From="MouseOver" To="Normal" GeneratedDuration="0:0:0.2" />
+                        </VisualStateGroup.Transitions>
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="BorderTK" Storyboard.TargetProperty="Value" To="1" />
+                                <DoubleAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.Effect).(DropShadowEffect.Opacity)" To="0.3" />
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="BorderTK" Storyboard.TargetProperty="Value" To="1" />
+                                <DoubleAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.Effect).(DropShadowEffect.Opacity)" To="0.3" />
+                            </Storyboard>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <basetool:ThicknessWrapper x:Name="BorderTK" Target="{Binding ElementName=Border}" Side="All" PropertyName="BorderThickness" />
+                <Border BorderThickness="0.5" BorderBrush="Gray" />
+                <Border x:Name="Border" BorderThickness="0">
+                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <Border.BorderBrush>
+                        <LinearGradientBrush x:Name="BorderBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Offset="0" Color="#FFe4ffff" />
+                            <GradientStop Offset="1.0" Color="#FF4d7b8a" />
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                    <Border.Effect>
+                        <DropShadowEffect Opacity="1" Color="#FF4d7b8a" />
+                    </Border.Effect>
+                </Border>
+            </Grid>
+        </ControlTemplate>
+    </controls:ChildWindow.Resources>
+    <Grid x:Name="LayoutRoot" Margin="2" Height="380" Width="600">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Rectangle x:Name="HeardBK" Stretch="Fill" Margin="0,0,0,0" HorizontalAlignment="Stretch">
+            <Rectangle.Fill>
+                #1172a9
+            </Rectangle.Fill>
+        </Rectangle>
+        <Grid x:Name="Header" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0" />
+                <RowDefinition Height="0" />
+                <RowDefinition Height="35" />
+            </Grid.RowDefinitions>
+            <Rectangle x:Name="HeaderMid" Grid.Row="1" Fill="#ffffffff">
+                <Rectangle.OpacityMask>
+                    <RadialGradientBrush GradientOrigin="0.5,0" Center="0.5,0" RadiusX="1" RadiusY="3">
+                        <GradientStop Color="#78ffffff" Offset="0" />
+                        <GradientStop Color="#14ffffff" Offset="0.4" />
+                    </RadialGradientBrush>
+                </Rectangle.OpacityMask>
+            </Rectangle>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="195" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1" Width="Auto">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="startUpload" Content="上传文件" FontSize="14" Foreground="White" Height="23" Width="75" Template="{StaticResource MyButton}" Background="{x:Null}" BorderThickness="0"  IsEnabled="False" Click="startUpload_Click" />
+                        <Button x:Name="Downloadfile" Content="下载文件" FontSize="14" Foreground="White" Height="23" Width="75" Template="{StaticResource MyButton}" Background="{x:Null}" BorderThickness="0" IsEnabled="False" Click="Downloadfile_Click" />
+                        <Button  x:Name="ViewOnline" Content="在线浏览" FontSize="14" Foreground="White" Height="23" Width="75" Template="{StaticResource MyButton}" Background="{x:Null}" BorderThickness="0" IsEnabled="True"  Visibility="Collapsed" Click="ViewOnline_Click" />
+                        <Button  x:Name="deleteFile" Content="删除文件" FontSize="14" Foreground="White" Height="23" Width="75" Template="{StaticResource MyButton}" Background="{x:Null}" BorderThickness="0" IsEnabled="False" Click="deleteFile_Click" />
+                    </StackPanel>
+                </Grid>
+                <TextBlock HorizontalAlignment="Left" Text="文件管理" x:Name="TitleText" Foreground="White" FontFamily="KaiTi" FontSize="17" VerticalAlignment="Center" Width="Auto">
+          <TextBlock.RenderTransform>
+            <ScaleTransform ScaleY="1.1" ScaleX="1.3" />
+          </TextBlock.RenderTransform>
+                </TextBlock>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="leftColumn" Width="190" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <liquidTreeView:Tree x:Name="testTree" Grid.Row="0" Grid.Column="0" Width="Auto" Height="Auto" EnableLines="True"   SelectionChange="testTree_SelectionChange" />
+            <controls:GridSplitter x:Name="grsplSplitter" Grid.Row="0" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Center" Width="4" Margin="0 2 0 2" Background="#00ffffff" />
+            <liquid:ItemViewer x:Name="items" Grid.Row="0" Grid.Column="2" Width="Auto" Height="Auto" VerticalAlignment="Stretch" Background="White"  DoubleClick="Items_DoubleClick" />
+        </Grid>
+    </Grid>
+</basetool:BaseChildWindow >
